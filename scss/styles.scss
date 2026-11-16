@@ -1,0 +1,46 @@
+@import "colors";
+@import "nav";
+
+@mixin center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: $white; color: $charcoal; font-family: Arial, Helvetica, sans-serif; }
+.site-shell { width: min(1320px, calc(100% - 32px)); margin: 3rem auto; background: $gold; }
+.hero {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  min-height: 520px;
+  margin: 0 14px;
+  padding: 18px;
+  background: $white;
+  &__copy {
+    @include center-column;
+    gap: 1.4rem;
+    padding: 2rem 1.3rem;
+    background: $light-gray;
+    .brand { margin: 0; font: 40px 'Sacramento', cursive; }
+    h1 { margin: 0; font-size: clamp(1.5rem, 2.5vw, 2.3rem); line-height: 1.1; }
+    p:not(.brand) { margin: 0; font-size: .95rem; }
+    .button {
+      margin-top: .5rem;
+      padding: .75rem 1rem;
+      background: $gold;
+      color: $white;
+      text-decoration: none;
+      &:hover, &:focus-visible { background: darken($gold, 10%); }
+    }
+  }
+  img { width: 100%; height: 100%; min-height: 480px; object-fit: cover; }
+}
+footer { padding: 1.2rem 2rem; font-size: .9rem; }
+@media (max-width: 760px) {
+  .site-shell { margin: 1rem auto; }
+  .hero { grid-template-columns: 1fr; }
+  .hero img { min-height: 300px; max-height: 460px; }
+}

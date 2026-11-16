@@ -1,0 +1,6 @@
+{
+  "name": "m3-w3-d3-homework",
+  "private": true,
+  "scripts": { "scss": "sass scss:css --no-source-map", "start": "lite-server" },
+  "devDependencies": { "lite-server": "^2.6.1", "sass": "^1.93.2" }
+}
